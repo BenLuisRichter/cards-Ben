@@ -34,3 +34,25 @@ func (c Card) Front() string {
 	}
 	return strings.Join(lines, "\n")
 }
+
+// Back gibt die Rückseite der Karte als String zurück.
+func (c Card) Back() string {
+	lines := []string{
+		"┌─────┐",
+		"│\\   /│",
+		"│ | | │",
+		"│/   \\│",
+		"└─────┘",
+	}
+	return strings.Join(lines, "\n")
+}
+
+// MatchesRank prüft, ob die Karte den gleichen Wert wie eine andere Karte hat.
+func (c Card) MatchesRank(other Card) bool {
+	return c.Rank == other.Rank
+}
+
+// MatchesSuit prüft, ob die Karte die gleiche Farbe wie eine andere Karte hat.
+func (c Card) MatchesSuit(other Card) bool {
+	return c.Suit == other.Suit
+}
